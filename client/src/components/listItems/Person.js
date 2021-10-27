@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Card } from 'antd'
 import { Link } from 'react-router-dom'
 import Cars from '../lists/Cars'
@@ -48,7 +48,7 @@ const Person = (props) => {
         <Card
           style={styles.card}
           actions={[
-            <Link to="/show">LEARN MORE </Link>,
+            <Link to={'/people/' + id}>LEARN MORE </Link>,
             <EditOutlined key="edit" onClick={handleButtonClick} />,
             <RemovePerson id={id} firstName={firstName} lastName={lastName} />,
           ]}

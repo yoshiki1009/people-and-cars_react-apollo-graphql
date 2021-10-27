@@ -60,7 +60,8 @@ const Car = (props) => {
             <RemoveCar id={id} year={year} make={make} model={model} price={price} personId={personId} />,
           ]}
         >
-          Year: {year} / Make: {make} / Model: {model} / Price: {price}
+          Year: {year} / Make: {make} / Model: {model} / Price:
+          {price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
         </Card>
       )}
     </>

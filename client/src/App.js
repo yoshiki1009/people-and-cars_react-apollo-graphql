@@ -15,7 +15,7 @@ const App = () => (
     <ApolloProvider client={client}>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/show" component={Show} exact />
+        <Route path={'/people/:id'} component={Show} exact />
       </Switch>
     </ApolloProvider>
   </BrowserRouter>

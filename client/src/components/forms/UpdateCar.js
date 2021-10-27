@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { filter } from 'lodash'
-import { Form, Input, Select, Button } from 'antd'
+import { Form, Input, Select, Button, InputNumber } from 'antd'
 import { useQuery, useMutation } from '@apollo/client'
 import { GET_CARS, GET_PEOPLE, UPDATE_CAR } from '../../queries'
 
@@ -113,7 +113,7 @@ const UpdateCar = (props) => {
       size="large"
     >
       <Form.Item name="year" rules={[{ required: true, message: 'Please input a car year!' }]}>
-        <Input onChange={(e) => updateStateVariable('year', e.target.value)} />
+        <InputNumber onChange={(value) => updateStateVariable('year', value)} min={1900} />
       </Form.Item>
       <Form.Item name="make" rules={[{ required: true, message: 'Please input a car make!' }]}>
         <Input onChange={(e) => updateStateVariable('make', e.target.value)} />
@@ -122,9 +122,9 @@ const UpdateCar = (props) => {
         <Input onChange={(e) => updateStateVariable('model', e.target.value)} />
       </Form.Item>
       <Form.Item name="price" rules={[{ required: true, message: 'Please input a car price!' }]}>
-        <Input onChange={(e) => updateStateVariable('price', e.target.value)} />
+        <InputNumber onChange={(value) => updateStateVariable('price', value)} min={0} step={100} />
       </Form.Item>
-      <Form.Item name="personId" rules={[{ required: true, message: 'Please select car person! ' }]}>
+      <Form.Item name="personId" rules={[{ required: true, message: 'Please select a person! ' }]}>
         <Select
           loading={loading}
           options={data.people.map(({ id, firstName, lastName }) => ({
