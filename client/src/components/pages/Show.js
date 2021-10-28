@@ -6,14 +6,14 @@ import { PERSON_WITH_CARS } from '../../queries'
 
 const getStyles = () => ({
   card: {
-    width: '500px',
+    width: '800px',
   },
   list: {
     display: 'flex',
     justifyContent: 'center',
   },
   button: {
-    marginBottom: '20px',
+    marginBottom: '40px',
   },
 })
 

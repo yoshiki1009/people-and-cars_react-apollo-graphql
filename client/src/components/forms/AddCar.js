@@ -78,14 +78,22 @@ const AddCar = () => {
       <Form.Item name="year" rules={[{ required: true, message: 'Please input a year !' }]}>
         <InputNumber placeholder="i.e. 2020" min={1900} step={1} />
       </Form.Item>
-      <Form.Item name="make" rules={[{ required: true, message: 'Please input a maker !' }]}>
+      <Form.Item
+        name="make"
+        rules={[{ required: true, message: 'Please input a maker !' }]}
+        style={{ maxWidth: '120px' }}
+      >
         <Input placeholder="i.e. Nissan" />
       </Form.Item>
-      <Form.Item name="model" rules={[{ required: true, message: 'Please input a model !' }]}>
+      <Form.Item
+        name="model"
+        rules={[{ required: true, message: 'Please input a model !' }]}
+        style={{ maxWidth: '120px' }}
+      >
         <Input placeholder="i.e. GT-R" />
       </Form.Item>
       <Form.Item name="price" rules={[{ required: true, message: 'Please input a price of the car!' }]}>
-        <InputNumber placeholder="i.e. 60000" min={0} step={100} style={{ minWidth: '120px' }} />
+        <InputNumber placeholder="i.e. 60000" min={0} step={100} style={{ minWidth: '100px' }} />
       </Form.Item>
       <Form.Item name="personId" rules={[{ required: true, message: 'Please select a person! ' }]}>
         <Select
